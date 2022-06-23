@@ -1,6 +1,6 @@
 {
-  "message": "fix: DEV-2510: add guard with error message for non incremental, non sequential datasets. (#1752) (#698)\n\n* fix: DEV-2510: add guard with error message for non incremental, non sequential datasets.\r\n\r\n* fix: DEV-2510: remove redundant checks\r\n\r\n* fix: DEV-2510: put everything in the same if statement\r\n\r\n* fix: DEV-2510: changing checks for sequence values to be used always, adding tests\r\n\r\n* fix: DEV-2510: update timeseries tests to new script exec method",
-  "commit": "d3b26733017ef62f5e03541da8e0c1c71baf8225",
+  "message": "fix: DEV-2647: rotating bounding box bugs (#711)\n\n* fix: DEV-2647: rotating bounding box bugs\r\n\r\n* fix: DEV-2647: rotating bounding box bugs\r\n\r\n* fix: DEV-2647: rotating bounding box bugs\r\n\r\n* Use one mixin for 2- and 3-point rect\r\n\r\n* fix: DEV-2647: handling rotated and reversed rectangles has veen improved\r\n\r\n* Fix calculations of rect height after 2nd point\r\n\r\n* fix: DEV-2647: fixing overflowing rectangles\r\n\r\n* fix: DEV-2647: cursor no longer changes while hovering over other regions when drawing\r\n\r\n* Fix contraints on mouse leave; whitespaces; ff check\r\n\r\nFF check in global scope can be possibly over-optimized by webpack\r\n\r\n* Remove console.log\r\n\r\nCo-authored-by: hlomzik <hlomzik@gmail.com>",
+  "commit": "d7af0e7c45b495345c76fa852b788a0e8ff0d531",
   "branch": "master",
-  "date": "2022-06-13T17:31:41Z"
+  "date": "2022-06-21T13:20:50Z"
 }

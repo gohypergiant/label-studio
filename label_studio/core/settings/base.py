@@ -100,6 +100,8 @@ DATABASES_ALL = {
 DATABASES_ALL['default'] = DATABASES_ALL[DJANGO_DB_POSTGRESQL]
 DATABASES = {'default': DATABASES_ALL.get(get_env('DJANGO_DB', 'default'))}
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -367,6 +369,8 @@ SESSION_COOKIE_SECURE = bool(int(get_env('SESSION_COOKIE_SECURE', False)))
 CSRF_COOKIE_SECURE = bool(int(get_env('CSRF_COOKIE_SECURE', SESSION_COOKIE_SECURE)))
 CSRF_COOKIE_HTTPONLY = bool(int(get_env('CSRF_COOKIE_HTTPONLY', SESSION_COOKIE_SECURE)))
 
+SSRF_PROTECTION_ENABLED = get_bool_env('SSRF_PROTECTION_ENABLED', False)
+
 # user media files
 MEDIA_ROOT = os.path.join(BASE_DATA_DIR, 'media')
 os.makedirs(MEDIA_ROOT, exist_ok=True)
@@ -393,6 +397,7 @@ TASK_LOCK_TTL = int(get_env('TASK_LOCK_TTL')) if get_env('TASK_LOCK_TTL') else N
 TASK_LOCK_DEFAULT_TTL = int(get_env('TASK_LOCK_DEFAULT_TTL', 3600))
 TASK_LOCK_MIN_TTL = int(get_env('TASK_LOCK_MIN_TTL', 120))
 
+RANDOM_NEXT_TASK_SAMPLE_SIZE = int(get_env('RANDOM_NEXT_TASK_SAMPLE_SIZE', 50))
 
 TASK_API_PAGE_SIZE_MAX = int(get_env('TASK_API_PAGE_SIZE_MAX', 0)) or None
 
