@@ -86,7 +86,22 @@ pip install label-studio
 ```
 
 ### Install for local development
+#### For MacM1 local development (otherwise skip down to the `pip install -e .` step:
+```bash
+# To address psycopg2-binary installation issues 
+brew install postgresql
+brew install openssl
+brew link openssl
+export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
 
+# To address grcio installation issues
+brew install gcc
+GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=1
+GRPC_PYTHON_BUILD_SYSTEM_ZLIB=1  
+```
+
+### 
 You can run the latest Label Studio version locally without installing the package with pip. 
 
 ```bash
@@ -97,6 +112,8 @@ python label_studio/manage.py migrate
 # Start the server in development mode at http://localhost:8080
 python label_studio/manage.py runserver
 ```
+
+
 
 ### Deploy in a cloud instance
 
